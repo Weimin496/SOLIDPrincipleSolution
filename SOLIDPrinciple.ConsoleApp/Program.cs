@@ -1,7 +1,8 @@
 ﻿using System;
-using System.Diagnostics;
+using System.Diagnostics;// used for Process at Single responsibility principle.
 using SOLIDPrinciple.ConsoleApp.SingleResponsibility;
 using SOLIDPrinciple.ConsoleApp.OpenClosed;
+using SOLIDPrinciple.ConsoleApp.LiskovSubstitution;
 
 namespace SOLIDPrinciple.ConsoleApp
 {
@@ -56,6 +57,36 @@ namespace SOLIDPrinciple.ConsoleApp
 
             Console.WriteLine("********* Finish Open closed principle ***********");
 
+            
+            Console.WriteLine("********* Liskov substitution principle ***********");
+
+            var sparrow = new Sparrow("sparrow");
+            var ostrich = new Ostrich("ostrich");
+
+            Console.WriteLine(sparrow.Chirp());
+            Console.WriteLine(sparrow.Fly());
+
+            Console.WriteLine(ostrich.Run());
+
+            //In here, ostrich have fly method of Bird class because inherit.
+            Console.WriteLine(ostrich.Fly()); // it's impossible at real world.
+
+            Console.WriteLine("------------------------------");
+
+            Console.WriteLine("Follow by Liskov substitution principle");
+
+            var sparrowWithLiskov = new SparrowWithLiskov("sparrow");
+            var ostrichWithLiskov = new OstrichWithLiskov("ostrich");
+
+            Console.WriteLine(sparrowWithLiskov.Chirp());
+            Console.WriteLine(sparrowWithLiskov.Fly());
+
+            Console.WriteLine(ostrichWithLiskov.Run());
+
+            //Console.WriteLine(ostrichWithLiskov.Fly()); ostrichWithLiskov havn't fly() method.
+
+
+            Console.WriteLine("********* Finish Liskov substitution principle ***********");
             Console.ReadLine();
         }
     }
