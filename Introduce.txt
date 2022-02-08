@@ -1,0 +1,22 @@
+SOLID principle:
+
+At real world, the SOLID Principle can help us to make readable, reusable and easily testable code. so we should follow by SOLID Principle as possible. however, we can not 100% repest SOLID Principle 
+because of busniess complexity, duration and developer experience.
+
+1.Single responsibility principle:
+Every Type (Class, Interface, struct) and Method focus on one features, the features is the reason of change.
+For example, The data layer only focus on the operation with Database (CRUD). It doesn't need to consider busniess logic, premissions and so on. 
+
+2. Open-closed principle:
+Software entities(Class, Modules, functions) should be open for extension and closed for modification. it means that you should be able to extend the behavior of a class without modifying the class.
+
+
+3. Liskov substitution principle:
+It means that subtype must be able to replace their base types(anywhere, anytime). At real world, what the parent class can do, not necessarily the subclass can also do.
+
+4. Interface segregation principle:
+It means that we use multiple specialized interfaces are better than universal interface. clien should not depend interface that they don't need.
+
+5. Dependency inversion principle:
+It means that more abstract classes define a set of interfaces,and concrete implementation classes must follow thest interfaces.
+
