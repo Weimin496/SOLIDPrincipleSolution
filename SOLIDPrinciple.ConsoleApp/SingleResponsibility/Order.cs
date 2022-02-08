@@ -1,9 +1,7 @@
 ﻿using System;
 using System.Collections.Generic;
-using System.Diagnostics;
 using System.IO;
 using System.Linq;
-using System.Text;
 
 namespace SOLIDPrinciple.ConsoleApp.SingleResponsibility
 {
@@ -50,7 +48,7 @@ namespace SOLIDPrinciple.ConsoleApp.SingleResponsibility
 
     public class Manage
     {
-        public void SaveAsTextFile(Order order, string pathWithFileName)
+        public static void SaveAsTextFile(Order order, string pathWithFileName)
         {
             if (File.Exists(pathWithFileName))
             {
