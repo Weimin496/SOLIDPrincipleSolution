@@ -3,6 +3,9 @@ using System.Diagnostics;// used for Process at Single responsibility principle.
 using SOLIDPrinciple.ConsoleApp.SingleResponsibility;
 using SOLIDPrinciple.ConsoleApp.OpenClosed;
 using SOLIDPrinciple.ConsoleApp.LiskovSubstitution;
+using SOLIDPrinciple.ConsoleApp.InterfaceSegregation;
+
+using BirdWithoutPrinciple = SOLIDPrinciple.ConsoleApp.InterfaceSegregation.Bird;
 
 namespace SOLIDPrinciple.ConsoleApp
 {
@@ -87,6 +90,38 @@ namespace SOLIDPrinciple.ConsoleApp
 
 
             Console.WriteLine("********* Finish Liskov substitution principle ***********");
+
+
+            Console.WriteLine("********* Interface segregation principle ***********");
+
+            Console.WriteLine("Not follow by interface segregation principle.");
+
+            var dog = new Dog();            
+
+            Console.WriteLine(dog.Barking());
+            Console.WriteLine(dog.Flying()); // throw execption
+            Console.WriteLine(dog.Swimming()); // throw execption
+
+            var bird = new BirdWithoutPrinciple();
+
+            Console.WriteLine(bird.Barking()); // throw execption
+            Console.WriteLine(bird.Flying());
+            Console.WriteLine(bird.Swimming()); // throw execption
+
+            Console.WriteLine("------------------------------");
+            Console.WriteLine("follow by interface segregation principle.");
+
+            var dogWithPrinciple = new DogWithPrinciple();
+            var birdWithPrinciple = new BirdWithPrinciple();
+            var fishWithPrinciple = new FishWithPrinciple();
+
+            Console.WriteLine(dogWithPrinciple.Barking());
+            Console.WriteLine(birdWithPrinciple.Flying());
+            Console.WriteLine(fishWithPrinciple.Swimming());
+
+            Console.WriteLine("********* Finish Interface segregation principle ***********");
+
+
             Console.ReadLine();
         }
     }
